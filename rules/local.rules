@@ -1,0 +1,2 @@
+# Demo rule: alert on a harmless HTTP URI marker in lab traffic.
+alert tcp any any -> any 80 (msg:"LOCAL LAB test marker observed"; flow:to_server,established; content:"/portfolio-lab-test"; http_uri; sid:1000001; rev:1;)
